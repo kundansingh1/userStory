@@ -1,0 +1,24 @@
+{
+  "name": "user-story",
+  "version": "1.0.0",
+  "description": "This is an user story app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kundan Singh",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "jsonwebtoken": "^6.2.0",
+    "mongoose": "^4.4.16",
+    "morgan": "^1.7.0",
+    "nodemon": "^1.9.2"
+  },
+  "devDependencies": {
+    "mongoose": "^4.4.16",
+    "nodemon": "^1.9.2"
+  }
+}
