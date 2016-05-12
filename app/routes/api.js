@@ -33,7 +33,7 @@ module.exports = function(app, express) {
 
       res.json({message: 'User has been created'});
     });
-  }); // api post signup
+  }); // api signup
 
   api.get('/users', function(req, res) {
     User.find({}, function(err, users) {
