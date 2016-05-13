@@ -4,7 +4,6 @@ var morgan = require('morgan');
 var config = require('./config');
 var mongoose = require('mongoose');
 
-
 var app = express();
 
 mongoose.connect(config.database, function(err) {
@@ -13,7 +12,7 @@ mongoose.connect(config.database, function(err) {
   } else {
     console.log('Connected to the database');
   }
-})
+});
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());

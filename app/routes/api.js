@@ -16,7 +16,6 @@ function createToken(user) {
 	return token;
 } // function createToken
 
-
 module.exports = function(app, express) {
 
 	var api = express.Router();
@@ -71,7 +70,6 @@ module.exports = function(app, express) {
 				}
 			}
 		});
-
 	}); // api post login
 	//
 	api.use(function(req, res, next) {
@@ -112,7 +110,6 @@ module.exports = function(app, express) {
         res.json({message: "New Story Created!"});
       });
     })
-
     .get(function(req, res) {
       Story.find({ creator: req.decoded.id }, function(err, stories){
         if(err) {
@@ -122,6 +119,12 @@ module.exports = function(app, express) {
         res.json(stories);
       });
     });
+
+  api.get('/me', function(req, res) {
+    res.json(req.decoded);
+  });
+
+
 
 	return api;
 }
