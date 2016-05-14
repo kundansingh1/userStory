@@ -77,9 +77,6 @@ module.exports = function(app, express) {
 		var token = req.body.token || req.params.token || req.query.token || req.headers['x-access-token'];
 
 		// check token
-    console.log(req.body);
-    console.log(req.params);
-    console.log(req.headers);
 		if(token) {
 			jsonwebtoken.verify(token, secretKey, function(err, decoded) {
 				if(err) {
