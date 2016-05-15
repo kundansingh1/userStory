@@ -28,4 +28,19 @@ angular.module('authService', [])
       else
         return $q.reject({message: "User has no token"});
     };
+  }) // factory ()
+
+  .factory('AuthToken', function($window) {
+    var authTokenFactory = {};
+    authTokenFactory.getToken = function() {
+      return $window.localStorage.getItem('token');
+    };
+
+    authTokenFactory.setToken = function(token) {
+      if(token) {
+        window.localStorage.setItem('token', token);
+      } else {
+        $window.localStorage.removeItem('token');
+      }
+    }; // setToken
   });
