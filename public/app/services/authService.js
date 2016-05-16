@@ -63,4 +63,5 @@ angular.module('authService', [])
       }
       return $q.reject(response);
     };
+    return interceptorFactory;
   });
