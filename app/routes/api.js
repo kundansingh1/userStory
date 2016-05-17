@@ -58,7 +58,7 @@ module.exports = function(app, express) {
 			} else if(user) {
 				var validPassword = user.comparePassword(req.body.password);
 				if(!validPassword) {
-					res.send({message: "Invalid Password"})
+					res.send({message: "Invalid Password"});
 				} else if(validPassword) {
 					//// token
 					var token = createToken(user);
@@ -120,8 +120,5 @@ module.exports = function(app, express) {
   api.get('/me', function(req, res) {
     res.json(req.decoded);
   });
-
-
-
 	return api;
-}
+};
