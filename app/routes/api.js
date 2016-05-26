@@ -42,7 +42,6 @@ module.exports = function(app, express) {
 				res.send(err);
 				return;
 			}
-
 			res.json({users});
 		});
 	}); // api get users

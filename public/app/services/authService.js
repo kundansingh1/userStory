@@ -1,6 +1,8 @@
 angular.module('authService', [])
   .factory('Auth', function($http, $q, AuthToken) {
+
     var authFactory = {};
+
     authFactory.login = function(username, password) {
       return $http.post('/api/login', {
         username: username,
@@ -28,8 +30,8 @@ angular.module('authService', [])
       else
         return $q.reject({message: "User has no token"});
     };
-  }) // factory ()
-
+  })
+  
   .factory('AuthToken', function($window) {
     var authTokenFactory = {};
     authTokenFactory.getToken = function() {
