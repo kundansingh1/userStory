@@ -31,7 +31,7 @@ angular.module('authService', [])
         return $q.reject({message: "User has no token"});
     };
   })
-  
+
   .factory('AuthToken', function($window) {
     var authTokenFactory = {};
     authTokenFactory.getToken = function() {
